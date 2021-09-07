@@ -1,10 +1,12 @@
 import os
+import revText
+import createReport
 # https://www.arothuis.nl/posts/one-off-docker-images/
 # Create output and input volume. 
 # Put also the main 
 
 # docker run -v $pwd/output:/output -v $pwd/input:/input example3
-
+# docker run -b C:/Users/Lionel/Python/dockerPractice/output:output C:/Users/Lionel/Python/dockerPractice/input:input example4
 currentDir = os.path.dirname(__file__)
 
 
@@ -14,19 +16,5 @@ outputPath = f"{currentDir}/output/output.txt"
 outputPathpdf = f"{currentDir}/output/output.pdf"
 
 
-with open(outputPath, "w") as outputFile:
-    with open(inputPath) as inputFile:
-        content = inputFile.read()
-        outputFile.write(content[::-1])
-        
-
-        
-from fpdf import FPDF
-WIDTH = 210
-HEIGHT = 297
-pdf = FPDF()
-pdf.add_page()
-pdf.set_font('Arial', 'B', 18)
-pdf.cell(40, 10, 'HELLO WORLD')
-#pdf.image("")
-pdf.output(outputPathpdf, 'F')
+revText.reverseText(inputPath, outputPath)
+createReport.createSenseIDReportPDF(inputPath, outputPathpdf)

@@ -1,3 +1,8 @@
+# Python Notebook state files
+.ipynb_checkpoints
+*.cpython-37*
+
+
 # History files
 .Rhistory
 .Rapp.history
@@ -37,3 +42,4 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
