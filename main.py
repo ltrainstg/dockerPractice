@@ -7,6 +7,7 @@ import createReport
 
 # docker run -v $pwd/output:/output -v $pwd/input:/input example3
 # docker run -b C:/Users/Lionel/Python/dockerPractice/output:output C:/Users/Lionel/Python/dockerPractice/input:input example4
+# dummy 
 currentDir = os.path.dirname(__file__)
 
 
